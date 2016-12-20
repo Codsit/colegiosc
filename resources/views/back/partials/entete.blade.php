@@ -3,7 +3,6 @@
 		<h1 class="page-header">
 			{!! $title !!}
 		</h1>
-		<p>{!! $fil !!}</p>
 		<ol class="breadcrumb">
 			<li class="active">
 				<span class="fa fa-{{ $icone }}"></span> {!! $fil !!}

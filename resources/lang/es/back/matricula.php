@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'matricula' => 'matricula',
-    'create' => 'Nueva Matricula'
+    'title' => 'matricula',
+    'add' => 'Nueva Matricula'
 ];

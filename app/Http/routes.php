@@ -84,6 +84,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 	Route::post('password/reset', 'Auth\PasswordController@postReset');
 
+    // upload Files
+    Route::post('fileUpload', ['as'=>'fileUpload','uses'=>'MatriculaController@fileUpload']);
     // rutas de Matricula
     Route::resource('matricula','MatriculaController');
 

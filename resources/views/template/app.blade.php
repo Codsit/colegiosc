@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Colegio Santa Cecilia</title>
 
     <!-- Favicon -->
@@ -58,18 +59,25 @@
 
                 <!-- Login -->
                 <div class="login-option">
-                     <a data-toggle="modal" data-target=".login-modal" href="#">Acceder<i class="fa fa-sign-out"></i></a>
                     <!-- Menu after login-->
-                    @if(Request::is('auth/register'))
+                    @if (Auth::guest())
                         <li class="active">
-                            {!! link_to('auth/register', trans('front/site.register')) !!}
-                            <a data-toggle="modal" data-target=".login-modal" href="{{ url('auth/login') }}">Acceder<i class="fa fa-sign-out"></i></a>
+                            <a data-toggle="modal" data-target=".login-modal" href="#">Acceder<i class="fa fa-sign-out"></i></a>
                         </li>
-                    @elseif(Request::is('password/email'))
-                        <li class="active">
-                            {!! link_to('password/email', trans('front/site.forget-password')) !!}
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                             {{ Auth::user()->username }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
                         </li>
                     @endif
+
+
+
                 </div>
                 <!-- Login -->
 
@@ -83,7 +91,7 @@
 
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="#"><img src="images/logo.png" alt=""></a>
+                    <a href="/"><img src="/images/logo.png" alt=""></a>
                 </div>
                 <!-- Logo -->
 
@@ -268,19 +276,26 @@
 
 <!-- Slide Menu -->
 <nav id="menu" class="responive-nav">
-    <a class="r-nav-logo" href="index-2.html">
-        <img src="images/nav-logo.png" alt=""></a>
+    <a class="r-nav-logo" href="/">
+
+        <img src="images/nav-logo.png"></a>
+    @if (Auth::guest())
+
+    @else
+        <a href="#"><img src="{{Auth::user()->avatar}}" alt=""  class="user_img"></a>
+    @endif
+
     <ul class="respoinve-nav-list">
         <li>
             <a class="triple-eff" data-toggle="collapse" href="#list-1"><i class="pull-right fa fa-angle-down"></i>Home</a>
             <ul class="collapse" id="list-1">
-                <li><a class="triple-eff" href="index-2.html">Home 1</a></li>
-                <li><a class="triple-eff" href="index-1.html">Home 2</a></li>
-                <li><a class="triple-eff" href="index-1.html">Home 3</a></li>
-                <li><a class="triple-eff" href="index-1.html">Home 4</a></li>
-                <li><a class="triple-eff" href="index-1.html">Home 5</a></li>
-                <li><a class="triple-eff" href="index-1.html">Home 6</a></li>
-                <li><a class="triple-eff" href="index-1.html">Home 7</a></li>
+                <li><a class="triple-eff" href="">Home 1</a></li>
+                <li><a class="triple-eff" href="">Home 2</a></li>
+                <li><a class="triple-eff" href="">Home 3</a></li>
+                <li><a class="triple-eff" href="">Home 4</a></li>
+                <li><a class="triple-eff" href="">Home 5</a></li>
+                <li><a class="triple-eff" href="">Home 6</a></li>
+                <li><a class="triple-eff" href="">Home 7</a></li>
             </ul>
         </li>
         <!-- Menu after login-->

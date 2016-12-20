@@ -12,21 +12,23 @@
 
     <meta charset="UTF-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title> Monarch UI - Bootstrap Frontend &amp; Admin Template </title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Portal CSC</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Favicons -->
 
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/images/icons/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/images/icons/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/images/icons/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../../assets/images/icons/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="../../assets/images/icons/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/insignea.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/insignea.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/insignea.png">
+    <link rel="apple-touch-icon-precomposed" href="images/insignea.png">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
-
-
+@yield('head')
     {!! HTML::style('../../assets-minified/admin-all-demo.css')!!}
+    {!! HTML::style('css/css_admin.css')!!}
     <!-- JS Core -->
 
     {!! HTML::script('../../assets-minified/js-core.js')!!}
@@ -414,8 +416,8 @@
 
             <div id="header-nav-left">
                 <div class="user-account-btn dropdown">
-                    <a href="#" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
-                        <img width="28" src="../../assets/image-resources/gravatar.jpg" alt="Profile image">
+                    <a href="#" title="{{ auth()->user()->username }}" class="user-profile clearfix" data-toggle="dropdown">
+                        <img width="28" src="{{ auth()->user()->avatar }}" alt="Profile image">
                         <span>{{ auth()->user()->username }}</span>
                         <i class="glyph-icon icon-angle-down"></i>
                     </a>
@@ -901,7 +903,18 @@
 
     <!-- JS Demo -->
     {!! HTML::script('../../assets-minified/admin-all-demo.js')!!}
+    <script type="text/javascript" src="../../assets/widgets/datepicker/datepicker.js"></script>
+    <script type="text/javascript">
+        /* Datepicker bootstrap */
 
+        $(function() { "use strict";
+            $('.bootstrap-datepicker').bsdatepicker({
+                format: 'mm-dd-yyyy'
+            });
+        });
+
+    </script>
+    @yield('scripts')
 
 </div>
 </body>

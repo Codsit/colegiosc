@@ -1,10 +1,4 @@
-@extends('back.template')
-
-@section('head')
-
-	{!! HTML::style('ckeditor/plugins/codesnippet/lib/highlight/styles/default.css') !!}
-
-@stop
+@extends('back.app')
 
 @section('main')
 
