@@ -1,9 +1,7 @@
-@extends('front.template')
+@extends('template.app')
 
 @section('main')
-	<div class="row">
-		<div class="box">
-			<div class="col-lg-12">
+			<div class="col-lg-8 col-lg-offset-2">
 				@if(session()->has('status'))
       				@include('partials/error', ['type' => 'success', 'message' => session('status')])
 				@endif
@@ -16,17 +14,16 @@
 				<p>{{ trans('front/password.info') }}</p>		
 				{!! Form::open(['url' => 'password/email', 'method' => 'post', 'role' => 'form']) !!}	
 
-					<div class="row">
+					<div class="col-lg-6">
+						<div class="form-group">
+							<input type="text" name="email" required="required"/>
+							<label class="control-label">{{trans('front/password.email')}}</label><i class="bar"></i>
+						</div>
+						{!! Form::submit(trans('front/form.send'), ['col-lg-3']) !!}
 
-						{!! Form::control('email', 6, 'email', $errors, trans('front/password.email')) !!}
-						{!! Form::submit(trans('front/form.send'), ['col-lg-12']) !!}
-						{!! Form::text('address', '', ['class' => 'hpet']) !!}	
-						
 					</div>
 
 				{!! Form::close() !!}
 
 			</div>
-		</div>
-	</div>
 @stop

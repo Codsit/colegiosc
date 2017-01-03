@@ -4,10 +4,11 @@ namespace App\Repositories;
 
 
 
-use App\Alumno;
-use App\Apoderado;
-use App\DocMatricula;
-use App\Matricula;
+
+use App\Models\Alumno;
+use App\Models\Apoderado;
+use App\Models\DocMatricula;
+use App\Models\Matricula;
 
 class MatriculaRepository extends BaseRepository {
 
@@ -23,14 +24,7 @@ class MatriculaRepository extends BaseRepository {
         $this->alumno = $alumno;
     }
 
-    /**
-     * Create or update a post.
-     *
-     * @param  App\Models\Post $post
-     * @param  array  $inputs
-     * @param  bool   $user_id
-     * @return App\Models\Post
-     */
+
     private function saveMatricula($matricula, $inputs, $alumno_id,$doc_id)
     {
         $matricula->anio_escolar = $inputs['anio_escolar'];

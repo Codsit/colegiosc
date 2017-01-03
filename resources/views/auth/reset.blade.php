@@ -1,9 +1,7 @@
-@extends('front.template')
+@extends('template.app')
 
 @section('main')
-	<div class="row">
-		<div class="box">
-			<div class="col-lg-12">
+			<div class="col-lg-10">
 				@if(session()->has('error'))
 					@include('partials/error', ['type' => 'danger', 'message' => session('error')])
 				@endif	
@@ -27,8 +25,6 @@
 				{!! Form::close() !!}
 
 			</div>
-		</div>
-	</div>
 @stop
 
 @section('scripts')

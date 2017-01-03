@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 
-use App\DocMatricula;
+
+
+use App\Models\DocMatricula;
 
 class DocMatriculaRepository extends BaseRepository {
 

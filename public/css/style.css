@@ -342,7 +342,7 @@ ul{ margin: 0; padding: 0; list-style: none;}
 .nav-holder{ position: relative; background: #fff;}
 .menu-link-holder{ display: none;}
 
-.logo{ padding: 25px 0; float: left;}
+.logo{ padding: 25px 0; float: left; margin-bottom: -100px;}
 
 .search-nd-cart{ float: right; padding: 39.5px 0;} 
 .search-nd-cart li{ float: left; margin: 0 0 0 30px; padding: 0 0 0 30px; border-left: 1px solid #e5e5e5;}
@@ -880,7 +880,7 @@ line-height: 70px; border-radius: 100%; color: #fff; top: 0;}
 .inner-page-heading.style-2 .main-heading h2{ font-size: 40px; margin: 0 0 30px;}
 .inner-page-heading.style-2 .main-heading span{ color: #fff; margin: 0;}
 .inner-banner.green-bg{ background: #8cc34b;}
-.inner-banner.dark-bg{ background: #252525;}
+.inner-banner.dark-bg{ background-image: url("/images/f-login.png");}
 .inner-banner.sky-bg{ background: #00bcd4;}
 
 /* single event detail */

@@ -816,6 +816,7 @@
                                 <span>{{ trans('back/admin.dashboard') }}</span>
                             </a>
                         </li>
+
                     @endif
                     <li class="divider"></li>
                     <li class="no-menu">
@@ -827,6 +828,12 @@
                     </li>
                     <li class="header"><span>Administradores</span></li>
 
+                    <li {!! classActivePath('medias') !!} class="no-menu">
+                        <a href="{!! route('medias') !!}" title="{{ trans('back/admin.medias') }}">
+                            <i class="glyph-icon icon-file"></i>
+                            <span>{{ trans('back/admin.medias') }}</span>
+                        </a>
+                    </li>
                     <li{!! classActiveSegment(1, 'user') !!}>
                         <a href="#" title="Ususarios">
                             <i class="glyph-icon icon-linecons-user"></i>

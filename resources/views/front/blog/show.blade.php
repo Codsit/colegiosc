@@ -1,10 +1,4 @@
-@extends('front.template')
-
-@section('head')
-
-  {!! HTML::style('ckeditor/plugins/codesnippet/lib/highlight/styles/monokai.css') !!}
-
-@stop
+@extends('template.app')
 
 @section('main')
 	<div class="row">

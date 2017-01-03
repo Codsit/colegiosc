@@ -34,18 +34,19 @@ class DatabaseSeeder extends Seeder {
 		]);
 
 		User::create([
-			'username' => 'GreatAdmin',
-			'email' => 'admin@la.fr',
+			'username' => 'admin',
+			'email' => 'santacecilialm@gmail.com',
 			'password' => bcrypt('admin'),
+            'avatar' => '/images/director.jpg',
 			'seen' => true,
 			'role_id' => 1,
 			'confirmed' => true
 		]);
 
 		User::create([
-			'username' => 'GreatRedactor',
+			'username' => 'Profesor',
 			'email' => 'redac@la.fr',
-			'password' => bcrypt('redac'),
+			'password' => bcrypt('profe'),
 			'seen' => true,
 			'role_id' => 2,
 			'valid' => true,

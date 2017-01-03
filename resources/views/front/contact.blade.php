@@ -1,4 +1,4 @@
-@extends('front.template')
+@extends('template.app')
 
 @section('main')
 	<div class="row">

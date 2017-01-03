@@ -1,7 +1,7 @@
 @extends('template.app')
  @section('slider')
 	 <!-- Main Slider -->
-	 <div id="main-slider" class="carousel slide carousel-fade">
+	 <div id="" class="carousel slide carousel-fade">
 
 		 <!-- Wrapper for slides -->
 		 <div class="carousel-inner" role="listbox">

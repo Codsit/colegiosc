@@ -89,4 +89,6 @@ Route::group(['middleware' => ['web']], function () {
     // rutas de Matricula
     Route::resource('matricula','MatriculaController');
 
+
+
 });

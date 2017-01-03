@@ -3,10 +3,9 @@
 namespace App\Repositories;
 
 
-use App\Alumno;
-use App\Apoderado;
-use App\DocMatricula;
-use App\Matricula;
+
+
+use App\Models\Apoderado;
 
 class ApoderadoRepository extends BaseRepository {
 

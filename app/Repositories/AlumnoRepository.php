@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 
-use App\Alumno;
+
+
+use App\Models\Alumno;
 
 class AlumnoRepository extends BaseRepository {
 

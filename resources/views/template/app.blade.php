@@ -117,10 +117,7 @@
                 <!-- Navigation -->
                 <div class="nav-list">
                     <ul>
-                        <li {!! classActivePath('/') !!}>
-                            {!! link_to('/', trans('front/site.home')) !!}
-                            <!-- <ul> <li><a> sub menu</a></li></ul> -->
-                        </li>
+
                         @if(session('statut') == 'visitor' || session('statut') == 'user')
                             <li {!! classActivePath('contact/create') !!}>
                                 {!! link_to('contact/create', trans('front/site.contact')) !!}
@@ -278,7 +275,7 @@
 <nav id="menu" class="responive-nav">
     <a class="r-nav-logo" href="/">
 
-        <img src="images/nav-logo.png"></a>
+        <img src="/images/nav-logo.png"></a>
     @if (Auth::guest())
 
     @else
@@ -345,22 +342,21 @@
             {!! Form::open(['url' => 'auth/login', 'method' => 'post', 'role' => 'form']) !!}
             <div class="form-group">
                     <input type="text" name="log" required="required"/>
-                    <label class="control-label">{{trans('front/login.log')}}</label><i class="bar"></i>
+                    <label class="control-label">Correo o su nombre</label><i class="bar"></i>
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" required="required"/>
-                    <label class="control-label">{{trans('front/login.password')}}</label><i class="bar"></i>
+                    <label class="control-label">Password</label><i class="bar"></i>
                 </div>
-                <ul class="btn-list">
-                    <li><button class="btn blue sm full-width">{{trans('front/login.forget')}}</button></li>
-                    <li><button class="btn blank dark sm full-width">Sign up</button></li>
-                </ul>
-                <div class="remeber-nd-forget">
-                    <a class="remember pull-left" href="#">Remember me</a>
-                    <a href="#" class="forget pull-right">Forgot password ?</a>
-                </div>
-                <div class="social-icons-2">
-                    <span>Connect with</span>
+            <ul class="btn-list">
+                <li><button class="btn blue sm full-width">Entrar</button></li>
+                <li>{!! link_to('auth/register', trans('front/login.registering'), ['class' => 'btn blank dark sm full-width']) !!}</li>
+            </ul>
+            <div class="remeber-nd-forget">
+                {!! link_to('password/email', trans('front/login.forget')) !!}
+            </div>
+                <div class="social-icons-2" style="display: none;">
+                    <span>Conectarse con </span>
                     <ul>
                         <li><a class="fa fa-twitter-square" href="#"></a></li>
                         <li><a class="fa fa-facebook-square" href="#"></a></li>
@@ -375,7 +371,14 @@
     </div>
 </div>
 <!-- Login Form -->
-
+<main role="main" class="container">
+    @if(session()->has('ok'))
+        @include('partials/error', ['type' => 'success', 'message' => session('ok')])
+    @endif
+    @if(isset($info))
+        @include('partials/error', ['type' => 'info', 'message' => $info])
+    @endif
+</main>
 <!-- Java Script -->
 {!! HTML::script('js/vendor/jquery.js')!!}
 {!! HTML::script('js/vendor/bootstrap.min.js')!!}

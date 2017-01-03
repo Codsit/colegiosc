@@ -1,4 +1,4 @@
-﻿@extends('back.template')
+﻿@extends('back.app')
 
 @section('head')
 

@@ -146,7 +146,9 @@ jQuery( document ).ready(function( $ ) {
             1199:{ items:4},
             1200:{ items:4}
         }
-    })
+    });
+
+
 
 
     // Courses slider 2
@@ -363,11 +365,13 @@ jQuery( document ).ready(function( $ ) {
     // Event Google Map 
     jQuery("#contact-map, #find-us-map").gmap3({
         marker: {
-            address: "Haltern am See, Weseler Str. 151"
+            address: "Haltern am See, Weseler Str. 151",
+            center:[-12.0638616, -76.9469581]
         },
         map: {
             options: {
-                zoom: 10,
+                center:[-12.0638616,-76.9469581],
+                zoom: 100,
                 scrollwheel: false,
             }
         },
